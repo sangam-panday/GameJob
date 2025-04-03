@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://nafk0qtdveu"]
+
+[ext_resource type="Script" uid="uid://dg4ei8blbbkqm" path="res://player.gd" id="1_5yvy5"]
+[ext_resource type="Texture2D" uid="uid://bpy1x1p2xwwu4" path="res://Super Mango Platformer Assets by JuhoSprite/Player.png" id="1_cdk25"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pjl1"]
+atlas = ExtResource("1_cdk25")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53pcn"]
+atlas = ExtResource("1_cdk25")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbjr7"]
+atlas = ExtResource("1_cdk25")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vc6x"]
+atlas = ExtResource("1_cdk25")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cq35l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pjl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53pcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbjr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vc6x")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5wtss"]
+radius = 7.28011
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_5yvy5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
+scale = Vector2(1.10937, 1.04427)
+sprite_frames = SubResource("SpriteFrames_cq35l")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.930136
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_5wtss")
+debug_color = Color(0, 0.594189, 0.732283, 0.42)

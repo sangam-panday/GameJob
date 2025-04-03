@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://uged5d6mq12l"]
+
+[ext_resource type="Texture2D" uid="uid://b48f1smisfm2g" path="res://Super Mango Platformer Assets by JuhoSprite/Platform.png" id="1_1cfhm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_856wh"]
+size = Vector2(1.78557, 2.95569)
+
+[node name="Platfrom" type="AnimatableBody2D"]
+position = Vector2(2, 1)
+scale = Vector2(42.3819, -4.29786)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.65652e-09, 0)
+scale = Vector2(0.0228362, -0.172302)
+texture = ExtResource("1_1cfhm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.35276e-08, 0.276014)
+scale = Vector2(0.607854, -0.659092)
+shape = SubResource("RectangleShape2D_856wh")
+one_way_collision = true
+debug_color = Color(1.92523e-06, 0.603868, 0.677141, 0.42)
