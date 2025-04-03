@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://nafk0qtdveu"]
+[gd_scene load_steps=15 format=3 uid="uid://nafk0qtdveu"]
 
 [ext_resource type="Script" uid="uid://dg4ei8blbbkqm" path="res://player.gd" id="1_5yvy5"]
 [ext_resource type="Texture2D" uid="uid://bpy1x1p2xwwu4" path="res://Super Mango Platformer Assets by JuhoSprite/Player.png" id="1_cdk25"]
@@ -19,6 +19,30 @@ region = Rect2(96, 0, 48, 48)
 atlas = ExtResource("1_cdk25")
 region = Rect2(144, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8w33"]
+atlas = ExtResource("1_cdk25")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xa75v"]
+atlas = ExtResource("1_cdk25")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58ae2"]
+atlas = ExtResource("1_cdk25")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivevv"]
+atlas = ExtResource("1_cdk25")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6jsd"]
+atlas = ExtResource("1_cdk25")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6qlh"]
+atlas = ExtResource("1_cdk25")
+region = Rect2(144, 48, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_cq35l"]
 animations = [{
 "frames": [{
@@ -37,6 +61,34 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8w33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xa75v")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58ae2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivevv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6jsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6qlh")
+}],
+"loop": true,
+"name": &"move",
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5wtss"]
@@ -50,9 +102,9 @@ script = ExtResource("1_5yvy5")
 z_index = 5
 scale = Vector2(1.10937, 1.04427)
 sprite_frames = SubResource("SpriteFrames_cq35l")
-animation = &"Idle"
+animation = &"jump"
 autoplay = "Idle"
-frame_progress = 0.930136
+frame_progress = 0.633322
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
