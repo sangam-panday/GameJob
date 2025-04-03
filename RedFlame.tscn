@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8kuaih6qobsx"]
+[gd_scene load_steps=8 format=3 uid="uid://b8kuaih6qobsx"]
 
+[ext_resource type="Script" uid="uid://rml5pc6stsd0" path="res://Script/red_flame.gd" id="1_1sy60"]
 [ext_resource type="Texture2D" uid="uid://bd2p7grsxwnfr" path="res://Super Mango Platformer Assets by JuhoSprite/Flame_1.png" id="1_vspti"]
 [ext_resource type="PackedScene" uid="uid://bm4r72khupvmo" path="res://killzone.tscn" id="2_1sy60"]
 
@@ -29,12 +30,13 @@ animations = [{
 radius = 5.0
 height = 14.0
 
-[node name="Node2D" type="Node2D"]
+[node name="RedFlames" type="Node2D"]
+script = ExtResource("1_1sy60")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_q68lc")
-frame_progress = 0.0837761
+frame_progress = 0.111825
 
 [node name="Killzone" parent="." instance=ExtResource("2_1sy60")]
 position = Vector2(-1, -9)
